@@ -48,3 +48,49 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
 transform: scale(1.1);
 box-shadow: 0 0 20px rgba(123, 47, 247, 0.7);
 }
+/* Character animations */
+.character {
+    position: fixed;
+    bottom: -200px; /* start off-screen */
+    width: 150px;
+    z-index: 10;
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.character-left {
+    left: 30px;
+    animation: popLeft 1.5s forwards;
+}
+
+.character-right {
+    right: 30px;
+    animation: popRight 1.5s forwards;
+}
+
+/* Animations */
+@keyframes popLeft {
+    0% {
+        bottom: -200px;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        bottom: 30px;
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes popRight {
+    0% {
+        bottom: -200px;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        bottom: 30px;
+        opacity: 1;
+        transform: scale(1);
+    }
+}
